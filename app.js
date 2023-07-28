@@ -3,7 +3,7 @@ const drivers = [
     { name: 'Leclerc', skill: 39 },
     { name: 'Alonso', skill: 41 },
     { name: 'Hamilton', skill: 40 },
-    // Add more drivers here
+    // Add drivers
 ];
 
 const numStints = 4;
@@ -31,7 +31,7 @@ function updateTotalScores() {
 
 function sortTableByTotalScore() {
     const resultTable = document.getElementById("result-table");
-    const rows = Array.from(resultTable.rows).slice(1); // Skip the header row
+    const rows = Array.from(resultTable.rows).slice(1);
 
     rows.sort((a, b) => {
         const totalScoreA = parseInt(a.cells[5].textContent, 10);
@@ -39,7 +39,6 @@ function sortTableByTotalScore() {
         return totalScoreB - totalScoreA;
     });
 
-    // Reorder the table rows based on the sorted order
     for (let i = 0; i < rows.length; i++) {
         resultTable.appendChild(rows[i]);
     }
@@ -64,12 +63,12 @@ function simulateStint() {
             const stintCell = document.getElementById(`driver-${drivers.indexOf(driver) + 1}-stint-${currentStint}`);
             stintCell.textContent = driverScore;
         }
-        updateTotalScores(); // Update total scores in the table
-        sortTableByTotalScore(); // Sort the table by total scores
+        updateTotalScores(); 
+        sortTableByTotalScore();
         currentStint++;
     } else {
-        resetTable(); // Reset the table for the next race
-        currentStint = 1; // Reset to 1 for the next simulation
+        resetTable();
+        currentStint = 1;
     }
 }
 
