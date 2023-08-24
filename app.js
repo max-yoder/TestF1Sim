@@ -72,7 +72,6 @@ function simulateStint() {
     } else {
         resetTable();
         currentStint = 1;
-
     }
 }
 
