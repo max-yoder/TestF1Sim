@@ -1,4 +1,4 @@
 # TestF1Sim
 First programming project in JavaScript
 
-Soon will have standings/statistics, potentially tyres and strategy. Very basic so far.
+Working on tyres and strategy now. May include standings soon. Very basic so far.

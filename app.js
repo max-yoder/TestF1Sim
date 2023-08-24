@@ -1,9 +1,8 @@
 const drivers = [
-    { name: 'Sainz', skill: 38 },
-    { name: 'Leclerc', skill: 39 },
-    { name: 'Alonso', skill: 41 },
-    { name: 'Hamilton', skill: 40 },
-    // Add drivers
+    {name: 'Sainz', skill: 38, tyreWear: 4},
+    {name: 'Leclerc', skill: 39, tyreWear: 4},
+    {name: 'Alonso', skill: 41, tyreWear: 4},
+    {name: 'Hamilton', skill: 40, tyreWear: 4},
 ];
 
 const numStints = 4;
@@ -59,18 +58,24 @@ function resetTable() {
 function simulateStint() {
     if (currentStint <= numStints) {
         for (const driver of drivers) {
-            const driverScore = driver.skill + getRandomNumber(10, 40);
+            const randomTyre = getRandomNumber(0, tyre.length - 1);
+            const selectedTyre = tyre[randomTyre];
+            const driverTyreReliability = driver.tyreWear;
+            const tyreState = (selectedTyre.reliability * driverTyreReliability) * getRandomNumber(0, 10) * selectedTyre.pace;
+            const driverScore = Math.floor(driver.skill + getRandomNumber(10, 40) + tyreState);
             const stintCell = document.getElementById(`driver-${drivers.indexOf(driver) + 1}-stint-${currentStint}`);
             stintCell.textContent = driverScore;
         }
-        updateTotalScores(); 
+        updateTotalScores();
         sortTableByTotalScore();
         currentStint++;
     } else {
         resetTable();
         currentStint = 1;
+
     }
 }
+
 
 
 
