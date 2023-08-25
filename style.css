@@ -1,22 +1,31 @@
+@font-face {
+    font-family: "F1Regular";
+    src: url("/fonts/Formula1-Regular.ttf");
+}
+
+@font-face {
+    font-family: "F1Bold";
+    src: url("/fonts/Formula1-Bold.ttf")
+}
+
 body, html {
     text-align: center;
     margin: 0;
-    font-family: Bahnschrift, Arial, sans-serif;
+    font-family: Bahnschrift, serif;
 }
-
- img {
-     margin-top: 0;
-    float: right;
- }
 
 
 header h1 {
     text-align: center;
-    font-family: Bahnschrift, Arial, sans-serif;
+    font-family: F1Bold, serif;
     font-size: 36px;
     margin: 0;
     padding: 20px;
     background-color:red;
+}
+
+th {
+    font-family: F1Regular, serif;
 }
 
 th, td {
@@ -55,7 +64,7 @@ button {
     color: #FFFFFF;
     cursor: pointer;
     display: inline-block;
-    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+    font-family: Bahnschrift, serif;
     font-size: 16px;
     font-weight: 800;
     line-height: 16px;
