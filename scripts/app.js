@@ -65,6 +65,14 @@ function simulateStint() {
             const driverScore = Math.floor(driver.skill + getRandomNumber(10, 40) + tyreState);
             const stintCell = document.getElementById(`driver-${drivers.indexOf(driver) + 1}-stint-${currentStint}`);
             stintCell.textContent = driverScore;
+
+            const tyreCell = document.getElementById(`driver-${drivers.indexOf(driver) + 1}-tyre`);
+            const tyreImage = document.createElement("img");
+            tyreImage.src = selectedTyre.imageSrc;
+            tyreImage.alt = selectedTyre.name;
+            tyreImage.classList.add("tyre-image");
+            tyreCell.innerHTML = '';
+            tyreCell.appendChild(tyreImage);
         }
         updateTotalScores();
         sortTableByTotalScore();

@@ -90,3 +90,8 @@ button:active {
 button:active {
     opacity: 0.5;
 }
+
+.tyre-image {
+    width: 30px;
+    height: 30px
+}
